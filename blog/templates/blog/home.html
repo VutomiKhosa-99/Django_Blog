@@ -21,12 +21,16 @@
             <a class="pagination-previous" href="?page={{ page_obj.previous_page_number }}">Previous</a>
         {% endif %}
 
-        {% for num in page_obj.paginator.page_range %} 
+        {% for num in page_obj.paginator.page_range %}
+            <ul class="pagination-list">
             {% if page_obj.number == num %}
+                <li>
                 <a class="pagination-link is-current" href="?page={{ num }}">{{ num }}</a>
-
+                </li>
             {% elif num > page_obj.number|add:'-3' and num < page_obj.number|add:'3' %}
+                <li>
                 <a class="pagination-current" href="?page={{ num }}">{{ num }}</a>
+                </li>
             {% endif %}
         {% endfor %}
 
@@ -36,5 +40,6 @@
         {% endif %}
 
     {% endif %}
-    </nav>
+        </ul>
+        </nav>
 {% endblock content %}
