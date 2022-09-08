@@ -62,21 +62,17 @@
                               <a class="navbar-item" href="{% url 'blog-about' %}">
                                 About
                               </a>
-                              </div>
-                        </div>
-                        </div>
-                        <!-- Right side -->
-                        <div id="navbarBasicExample"  class="navbar-menu">
-                            {% if user.is_authenticated %}
-                                <a class="level-item" href="{% url 'post-create' %}">New Post</a>
-                                <a class="level-item" href="{% url 'logout' %}">Logout</a>
-                                <a class="level-item" href="{% url 'profile' %}">Profile</a>
-                            {% else %}
-                                <a class="level-item" href="{% url 'login' %}">Login</a>
-                                <a class="level-item" href="{% url 'register' %}">Register</a>
-                            {% endif %}
-                            
-                        </div>
+
+                                {% if user.is_authenticated %}
+                                    <a class="navbar-item" href="{% url 'post-create' %}">New Post</a>
+                                    <a class="navbar-item" href="{% url 'logout' %}">Logout</a>
+                                    <a class="navbar-item" href="{% url 'profile' %}">Profile</a>
+                                {% else %}
+                                    <a class="navbar-item" href="{% url 'login' %}">Login</a>
+                                    <a class="navbar-item" href="{% url 'register' %}">Register</a>
+                                {% endif %}
+                            </div>
+                        </div>           
                 </section>
                    
                 
