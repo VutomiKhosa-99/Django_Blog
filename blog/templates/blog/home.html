@@ -4,9 +4,9 @@
             <div class="clearfix mt-40">
                         <div class="search-item-img">
                             <a href="#">
-                                <img src="{{ post.author.profile.image.url }}" width="70" height="70">
+                                <img src="{{ post.author.profile.image.url }}" class="rounded-circle" width="70" height="70">
                             </a>
-                            <a class="mr-2" href="{% url 'user-posts' post.author.username %}">{{ post.author }}</a>
+                            <h5><a class="mr-2" href="{% url 'user-posts' post.author.username %}">{{ post.author }}</a></h5>
                         </div>
                         <div class="search-item-content">
                             <h3 class="search-item-caption"><a href="{% url 'post-detail' post.id %}">{{ post.title }}</a></h3>
