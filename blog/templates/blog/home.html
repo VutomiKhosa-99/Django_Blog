@@ -2,8 +2,6 @@
 {% block content %}
     {% for post in posts %}
             <div class="clearfix mt-40">
-                <ul class="xsearch-items">
-                    <li class="search-item">
                         <div class="search-item-img">
                             <a href="#">
                                 <img src="{{ post.author.profile.image.url }}" width="70" height="70">
@@ -21,8 +19,6 @@
                                 <p class="article-content">{{ post.content }}</p>
                             </div>
                         </div>
-                    </li>
-                </ul>
             </div>
     {% endfor %}
         {% if is_paginated %}
