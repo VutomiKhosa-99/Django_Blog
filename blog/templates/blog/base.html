@@ -34,44 +34,33 @@
 
 </head>
 <body>
-
-                <section class="hero is-small is-success mb-4">
-                        <div class="hero-head">
-                            <nav class="navbar">
-                                <div class="container has-text-centered">
-                                    <div class="navbar-brand">
-                                        <h1 class="title is-1"><a href="{% url 'blog-home' %}">Django Blog</a></h1>
-                                        <span class="navbar-burger" data-target="navbarMenuHeroA">
-                                            <span></span>
-                                            <span></span>
-                                            <span></span>
-                                          </span>
-                                    </div>
-                                    <div id="navbarMenuHeroA" class="navbar-menu">
-                                        <div class="navbar-end">
-                                            <ul class="menu-list">
-                                                <li><a class="navbar-item is-active"  href="{% url 'blog-home' %}">
-                                                    Home
-                                                </a></li>
-                                            
-                                                <li><a class="navbar-item" href="{% url 'blog-about' %}">
-                                                    About
-                                                </a></li>
-                                                {% if user.is_authenticated %}
-                                                    <li><a class="navbar-item" href="{% url 'post-create' %}">New Post</a></li>
-                                                    <li><a class="navbar-item" href="{% url 'logout' %}">Logout</a></li>
-                                                    <li><a class="navbar-item" href="{% url 'profile' %}">Profile</a></li>
-                                                {% else %}
-                                                    <li><a class="navbar-item" href="{% url 'login' %}">Login</a></li>
-                                                    <li><a class="navbar-item" href="{% url 'register' %}">Register</a></li>
-                                                {% endif %}
-                                            </ul>
-                                        </div>
-                                    </div>
-                                </div>
-                            </nav>
-                        </div>          
-                </section>
+    <header class="site-header">
+        <nav class="navbar navbar-expand-md navbar-dark bg-steel fixed-top">
+          <div class="container">
+            <a class="navbar-brand mr-4" href="{% url 'blog-home' %}">Django Blog</a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarToggle" aria-controls="navbarToggle" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarToggle">
+              <div class="navbar-nav mr-auto">
+                <a class="nav-item nav-link" href="{% url 'blog-home' %}">Home</a>
+                <a class="nav-item nav-link" href="{% url 'blog-about' %}">About</a>
+              </div>
+              <!-- Navbar Right Side -->
+              <div class="navbar-nav">
+                {% if user.is_authenticated %}
+                  <a class="nav-item nav-link" href="{% url 'post-create' %}">New Post</a>
+                  <a class="nav-item nav-link" href="{% url 'profile' %}">Profile</a>
+                  <a class="nav-item nav-link" href="{% url 'logout' %}">Logout</a>
+                {% else %}
+                  <a class="nav-item nav-link" href="{% url 'login' %}">Login</a>
+                  <a class="nav-item nav-link" href="{% url 'register' %}">Register</a>
+                {% endif %}
+              </div>
+            </div>
+          </div>
+        </nav>
+      </header>
                    
                 
         
@@ -107,7 +96,7 @@
 
 
 <!-- Optional JavaScript -->
-    jQuery first, then Popper.js, then Bootstrap JS 
+   <!-- jQuery first, then Popper.js, then Bootstrap JS -->
     <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/popper.js@1.12.9/dist/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
