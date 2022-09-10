@@ -24,6 +24,7 @@
                     </li>
                 </ul>
             </div>
+    {% endfor %}
         {% if is_paginated %}
 
             {% if page_obj.has_previous %}
@@ -49,5 +50,4 @@
         </div>
     </div>
 </div>
-    {% endfor %}
 {% endblock %}
