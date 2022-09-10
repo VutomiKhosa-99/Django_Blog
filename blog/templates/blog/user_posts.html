@@ -3,7 +3,7 @@
 {% block content %}
     <h1 class="mb-3">  Posts by {{ view.kwargs.username }}  ({{ page_obj.paginator.count }})</h1>
     {% for post in posts %}
-        <article class="search-item-img">
+        <article class="container">
             <img  class="rounded-circle" src="{{ post.author.profile.image.url }}"></img>
             <div class="media-body">
             <div class="article-metadata">
