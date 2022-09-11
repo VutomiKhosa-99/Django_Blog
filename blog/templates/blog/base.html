@@ -231,7 +231,7 @@
                             <a href="{% url 'blog-home' %}" class="nav-item nav-link active">Home</a>
                             <a href="{% url 'blog-about' %}" class="nav-item nav-link">About</a>
                         </div>
-                        <div class="navbar-nav ms-auto">
+                        <div class="navbar-nav float-right">
                                 {% if user.is_authenticated %}
                                     <a class="nav-item nav-link" href="{% url 'post-create' %}">New Post</a>
                                     <a class="nav-item nav-link" href="{% url 'profile' %}">Profile</a>
