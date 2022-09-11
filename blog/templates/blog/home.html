@@ -6,12 +6,12 @@
                             <a href="#">
                                 <!-- <img src="{{ post.author.profile.image.url }}" class="rounded-circle" width="70" height="70"> -->
                             </a>
-                            <h5><a class="mr-2" href="{% url 'user-posts' post.author.username %}">{{ post.author }}</a></h5>
                         </div>
                         <div class="search-item-content">
                             <h3 class="search-item-caption"><a href="{% url 'post-detail' post.id %}">{{ post.title }}</a></h3>
                             <div class="search-item-meta mb-15">
                                 <ul class="list-inline">
+                                    <li><a class="mr-2" href="{% url 'user-posts' post.author.username %}">Written by {{ post.author }}</a></li>
                                     <li><small class="text-muted">{{ post.date_posted|date:"F d, Y" }}</small></li>
                                 </ul>
                             </div>
